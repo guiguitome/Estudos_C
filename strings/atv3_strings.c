@@ -15,6 +15,10 @@ int main(){
 
     for(i = 0; i <= 8; i++){
         for(j = i + 1; j <= 9; j++){
+            //compara 2 strings
+            // str1 > str2 -> >0
+            // str1 < str2 -> <0
+            // str1 = str2 -> 0
             if(strcmp(nome[i], nome[j]) > 0){
                 strcpy(temp, nome[i]);
                 strcpy(nome[i], nome[j]);
