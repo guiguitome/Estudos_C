@@ -17,6 +17,7 @@ int main(){
                    {11, 12, 13, 14, 15},
                    {20, 17, 1, 3, 1},
                    {6, -2, 5, 9, 28}};
+    int C[5][5];
     int i, j;
     int diagA = 0, diagB = 0;
 
@@ -39,6 +40,14 @@ int main(){
 
     printf("\n\nSoma da diagonal de A: %d\n", diagA);
     printf("Soma da diagonal de B: %d\n", diagB);
+
+    for(i = 0; i < 5; i++){
+        for(j = 0; j < 5; j++){
+            C[i][j] = A[i][j] * B[i][j] + A[i][j++] * B[i++][j];
+            printf("%d ", C[i][j]); 
+        }
+        printf("\n");
+    }
 
     return 0;
 }
