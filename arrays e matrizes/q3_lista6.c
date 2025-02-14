@@ -18,7 +18,7 @@ int main(){
                    {20, 17, 1, 3, 1},
                    {6, -2, 5, 9, 28}};
     int C[5][5];
-    int i, j;
+    int i, j, k;
     int diagA = 0, diagB = 0;
 
     printf("soma das matrizes: \n");
@@ -41,10 +41,28 @@ int main(){
     printf("\n\nSoma da diagonal de A: %d\n", diagA);
     printf("Soma da diagonal de B: %d\n", diagB);
 
+    //multiplicando a matriz
+    for(i = 0; i < 5; i++){ //for das linha
+        
+        for(j = 0; j < 5; j++){ // for das colunas
+            
+            C[i][j] = 0; // zerando o elemento para não dar erro (compilador pode interpretar como lixo se não atribuir valor)
+            
+            for(k = 0; k < 5; k++){ //for das colunas 2
+                C[i][j] += A[i][k] * B[k][j]; //fazendo o somatorio dos produtos
+                                             //a variavel j faz o papel que o i faria, pois, pelo for k ta aninhado no for j
+                                             // o i não vai variar até j chegar a 4.
+            }
+            
+        }
+
+    }
+
+    printf("\nmultiplicação entre A e B:\n");
+
     for(i = 0; i < 5; i++){
         for(j = 0; j < 5; j++){
-            C[i][j] = A[i][j] * B[i][j] + A[i][j++] * B[i++][j];
-            printf("%d ", C[i][j]); 
+            printf("%d ", C[i][j]);
         }
         printf("\n");
     }
